@@ -2,22 +2,24 @@
   "name": "chai-aur-backend",
   "version": "1.0.0",
   "description": "backend",
-  "types": "module",
   "keywords": [
     "js",
     "backend"
   ],
   "license": "ISC",
   "author": "Srijeet Roy",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon -r dotenv/config src/index.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
   },
   "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "mongoose": "^9.10.2",
     "prettier": "^3.9.9"
   }
 }
