@@ -6,6 +6,14 @@ const connectDB=async()=>{
        const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
        console.log(`\n MONGO DB Connected !!! DB Host : ${connectionInstance.connection.host}`);
        
+     const userSchema = new mongoose.Schema({
+  name: String
+});
+
+const User = mongoose.model('User', userSchema);
+
+
+await User.create({ name: "srijeet" });
     } catch (error) {
         console.log("MONGO DB Connection error",error);
         process.exit(1) 
